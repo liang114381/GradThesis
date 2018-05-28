@@ -1,0 +1,52 @@
+\documentclass[]{article}
+
+\usepackage{amsmath}
+\usepackage[a4paper,margin=1in]{geometry}
+
+%opening
+\title{To Be Determined}
+\author{Zhenxiao Liang (2014012508)}
+
+\begin{document}
+
+\maketitle
+
+\section{Background}
+
+It is very common and important for researchers in a community to share their information and progress which is helpful to everyone in the community. This of course also works for drug development being in charge of pharmaceutical companies in general. For example, multiple pharmaceutical companies may be developing some similar drug at the same time, or one company may be trying some compound which has been proved infeasible by another company. Both cases would lead to extra expenses and time cost and should be avoided if possible. On the other hand, companies usually don’t wish to reveal and share the structure of compounds being under development due to patents and the underlying plagiarism risk. In many cases it is not necessary for the companies to know everything about some drug, but only a part of them can be enough instead. To proivde the confidentility of underlying structure, the MPC (secure multi-party computation) ~\cite{cramer2015secure} is leveraged over the features extracted from underlying structure. In particular, the features are obtained by feeding the original structure parameters into a neural netwrok.
+
+\section{Related Papers}
+\begin{itemize}
+	\item
+	~\cite{DBLP:journals/corr/OlivecronaBEC17} introduces a method to tune a sequence-based generative model for molecular de novo design that through augmented episodic likelihood can learn to generate structures with certain specified desirable properties.
+	\item 
+	~\cite{Jagadeesh692} leverages the secure multi-party computation to deriving diagnoses without revealing patient genomes. We would use similar techniques but on the substructure of drug compound insetead of genomes. They also provide a set of open-source code of MPC on GitHub.
+	\item 
+	~\cite{Wan086033} proposed new scheme that combines feature embedding (by SVD decomposition) with deep learning for predicting compound-protein interactions. The encodings for drug compound would be used in our project.
+\end{itemize}
+
+\section{Preliminary Tools}
+\subsection{Secure Multi-party Computation}
+In a secure two-party computation protocol, Alice holds an input $x\in\{0,1\}^n$ and
+Bob holds an input $y\in\{0,1\}^n$. Their goal is to compute a function $f(x, y)$ on their joint input $(x, y)$. The computation is considered “secure” if at the end of the computation,
+the only information that Alice and Bob learn is the function value $f(x, y)$ and nothing
+else about the other party’s input. It is important to note here that the function output
+$f(x, y)$ could reveal some information about the inputs $x$ and $y$. 
+
+In this project, rather than a 2-party MPC protocol we need to use an MPC protocol working for more than 2 parties.
+
+\section{Experiment Design}
+\subsection{Datasets}
+\begin{itemize}
+	\item Tox21 Dataset: NCATS provided assay activity data and chemical structures on the Tox21 collection of about 10,000 compounds (Tox21 10K). A collection of compounds independent of the Tox21 10K collection will be used as the test set.
+	\item Drug Bank: The DrugBank database is a comprehensive, freely accessible, online database containing information on drugs and drug targets.
+\end{itemize}
+\subsection{Experiment Steps}
+\begin{enumerate}
+	\item Extract features from the compound descriptions using feature embedding neural network.
+	\item Usnig MPC on obtained features to compute values used to share among parties.
+\end{enumerate}
+
+\bibliography{grad}
+\bibliographystyle{plain}
+\end{document}
