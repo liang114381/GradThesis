@@ -14,7 +14,7 @@
   %=========
   % 中文信息
   %=========
-  ctitle={清华大学学位论文 \LaTeX\ 模板\\使用示例文档 v\version},
+  ctitle={基于多方安全计算的隐私保护的药物分子相似性查询系统},
   cdegree={工学学士},
   cdepartment={交叉信息院},
   cmajor={计算机科学与技术（实验班）},
@@ -61,56 +61,24 @@
   % edate={December, 2005}
   %
   % 关键词用“英文逗号”分割
-  ckeywords={机器学习, 多方安全计算, 计算生物学},
-  ekeywords={Machine Learning, Secure Multi-party Computation, Computational Biology}
+  ckeywords={机器学习, 多方安全计算, 计算生物学, 奇异值分解},
+  ekeywords={Machine Learning, Secure Multi-party Computation, Computational Biology， SVD}
 }
 
 % 定义中英文摘要和关键字
 \begin{cabstract}
-  论文的摘要是对论文研究内容和成果的高度概括。摘要应对论文所研究的问题及其研究目
-  的进行描述，对研究方法和过程进行简单介绍，对研究成果和所得结论进行概括。摘要应
-  具有独立性和自明性，其内容应包含与论文全文同等量的主要信息。使读者即使不阅读全
-  文，通过摘要就能了解论文的总体内容和主要成果。
-
-  论文摘要的书写应力求精确、简明。切忌写成对论文书写内容进行提要的形式，尤其要避
-  免“第 1 章……；第 2 章……；……”这种或类似的陈述方式。
-
-  本文介绍清华大学论文模板 \thuthesis{} 的使用方法。本模板符合学校的本科、硕士、
-  博士论文格式要求。
-
-  本文的创新点主要有：
-  \begin{itemize}
-    \item 用例子来解释模板的使用方法；
-    \item 用废话来填充无关紧要的部分；
-    \item 一边学习摸索一边编写新代码。
-  \end{itemize}
-
-  关键词是为了文献标引工作、用以表示全文主要内容信息的单词或术语。关键词不超过 5
-  个，每个关键词中间用分号分隔。（模板作者注：关键词分隔符不用考虑，模板会自动处
-  理。英文关键词同理。）
+	药物分子的相似性计算是一个药物研发中进行信息共享时的一个基本问题。对于如何对已知的若干种药物分子进行相似性比较已经有大量成熟的方案，其中就包括分子指纹的方案。即先提取药物分子的分子指纹，然后对分子指纹进行比对。但这要求计算方持有待比较分子的所有分子指纹。这个要求对于很多制药公司的需求而言是不实际的。例如对于尚处于制药公司研发序列中的药品，制药公司可能不能接受公开整个研发中药物指纹，因为这会泄露过多的药物相关的信息给竞争者。然而，计算药物相似度的需求始终存在，因为制药公司总是希望能够对当前市场上的研发现状和其他公司研发中药物与自己公司药物的相似性有所了解。
+	
+	对此，本文实现了一种基于安全多方计算药物分子相似度比较系统。该系统通过将计算中间数据分布式地共享在多个不同的参与者或是服务提供商之间，可以在不泄露分子指纹信息的前提下得到药物分子间的相似性。同时，由于多方安全计算协议中比较运算符的低效性，为了提高系统运行的效率，我们实现了一种替代方案，即通过奇异值分解对原始数据进行降维，然后直接计算降维后数据的欧式距离来得到所需的分子间相似性。
 \end{cabstract}
 
 % 如果习惯关键字跟在摘要文字后面，可以用直接命令来设置，如下：
 % \ckeywords{\TeX, \LaTeX, CJK, 模板, 论文}
 
 \begin{eabstract}
-   An abstract of a dissertation is a summary and extraction of research work
-   and contributions. Included in an abstract should be description of research
-   topic and research objective, brief introduction to methodology and research
-   process, and summarization of conclusion and contributions of the
-   research. An abstract should be characterized by independence and clarity and
-   carry identical information with the dissertation. It should be such that the
-   general idea and major contributions of the dissertation are conveyed without
-   reading the dissertation.
-
-   An abstract should be concise and to the point. It is a misunderstanding to
-   make an abstract an outline of the dissertation and words ``the first
-   chapter'', ``the second chapter'' and the like should be avoided in the
-   abstract.
-
-   Key words are terms used in a dissertation for indexing, reflecting core
-   information of the dissertation. An abstract may contain a maximum of 5 key
-   words, with semi-colons used in between to separate one another.
+	The computation for similarity between drugs is a basic problem when sharing information for drug development. There have been quite a few developed solutions for the cases where the structures of drug molecules are available, including the molecular fingerprint solution. Specifically, the fingerprint of some drug molecule, which is usually a hashed feature vector, would be calculated first, and then we can make comparison on the fingerprints of different drug molecules. However, such a condition that the pharmaceutical company must provide the full information of the drug structure is impractical. For example, the pharmaceutical company may not accept to publish such information about the drugs under development. But the demand for calculating similarity between all drugs still exists, because pharmaceutical company always hope to obtain some knowledge of the current situation of drug development.
+	
+	Thus, we implement an MPC-based system used to calculate the similarity between drug molecules. This system works by distributing intermediate data to multiple participants of service providers to obtain similarity information without leak the full information of drugs. Moreover, due to the inefficiency of comparison operator in MPC, we implement an alternative solution, which first uses the singular value decomposition to reduce the dimension of raw data and then calculates the Euclidean distance between reduced data to obtain similarities.
 \end{eabstract}
 
 % \ekeywords{\TeX, \LaTeX, CJK, template, thesis}

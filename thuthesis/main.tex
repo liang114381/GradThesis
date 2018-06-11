@@ -10,9 +10,14 @@
 % 所有其它可能用到的包都统一放到这里了，可以根据自己的实际添加或者删除。
 \usepackage{thuthesis}
 \usepackage{subcaption}
+\usepackage[lined, boxed, linesnumbered]{algorithm2e}
 \usepackage[resetlabels]{multibib}
+\usepackage{multirow}
+\usepackage{hyperref}
 
 \newcites{sec}{Appendix References}
+
+\newcommand{\citeu}[1]{\textsuperscript{\cite{#1}}}
 
 % 定义所有的图片文件在 figures 子目录下
 \graphicspath{{figures/}}
@@ -78,7 +83,7 @@
 \end{appendix}
 
 %% 个人简历
-% \include{data/resume}
+\include{data/resume}
 
 %% 本科生进行格式审查是需要下面这个表格，答辩可能不需要。选择性留下。
 % 综合论文训练记录表

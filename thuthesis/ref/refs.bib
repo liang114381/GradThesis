@@ -123,7 +123,7 @@
 	keywords = "Fingerprints, Virtual screening, Similarity search, Data fusion, Comparison",
 	abstract = "Molecular fingerprints have been used for a long time now in drug discovery and virtual screening. Their ease of use (requiring little to no configuration) and the speed at which substructure and similarity searches can be performed with them – paired with a virtual screening performance similar to other more complex methods – is the reason for their popularity. However, there are many types of fingerprints, each representing a different aspect of the molecule, which can greatly affect search performance. This review focuses on commonly used fingerprint algorithms, their usage in virtual screening, and the software packages and online tools that provide these algorithms."
 }
-@unknown{intro_to_mpc,
+@misc{intro_to_mpc,
 author = {Cramer, Ronald and Damgård, Ivan and Catalano, Dario and Di Crescenzo, Giovanni and Darmgård, Ivan and Pointcheval, David and Takagi, Tsuyoshi},
 year = {2006},
 month = {03},
@@ -135,28 +135,137 @@ title = {Multiparty Computation, an Introduction}
 	title = {On the Early History of the Singular Value Decomposition},
 	year = {1992}
 }
-@InProceedings{10.1007/978-3-642-03549-4_20,
-author="Bogetoft, Peter
-and Christensen, Dan Lund
-and Damg{\aa}rd, Ivan
-and Geisler, Martin
-and Jakobsen, Thomas
-and Kr{\o}igaard, Mikkel
-and Nielsen, Janus Dam
-and Nielsen, Jesper Buus
-and Nielsen, Kurt
-and Pagter, Jakob
-and Schwartzbach, Michael
-and Toft, Tomas",
-editor="Dingledine, Roger
-and Golle, Philippe",
-title="Secure Multiparty Computation Goes Live",
-booktitle="Financial Cryptography and Data Security",
-year="2009",
+@book{Rajaraman:2011:MMD:2124405,
+author = {Rajaraman, Anand and Ullman, Jeffrey David},
+title = {Mining of Massive Datasets},
+year = {2011},
+isbn = {1107015359, 9781107015357},
+publisher = {Cambridge University Press},
+address = {New York, NY, USA},
+} 
+@article{drugbank,
+	added-at = {2008-01-23T00:00:00.000+0100},
+	author = {Wishart, David S. and Knox, Craig and Guo, Anchi and Cheng, Dean and Shrivastava, Savita and Tzur, Dan and Gautam, Bijaya and Hassanali, Murtaza},
+	biburl = {https://www.bibsonomy.org/bibtex/20b2ba18e5af1d9f915faebb1a7655e85/dblp},
+	date = {2008-01-23},
+	description = {dblp},
+	ee = {http://dx.doi.org/10.1093/nar/gkm958},
+	interhash = {fbdc3cbde6de4de82337fba87242a219},
+	intrahash = {0b2ba18e5af1d9f915faebb1a7655e85},
+	journal = {Nucleic Acids Research},
+	keywords = {dblp},
+	number = {Database-Issue},
+	pages = {901-906},
+	timestamp = {2008-01-24T11:07:46.000+0100},
+	title = {DrugBank: a knowledgebase for drugs, drug actions and drug targets.},
+	url = {http://dblp.uni-trier.de/db/journals/nar/nar36.html#WishartKGCSTGH08},
+	volume = 36,
+	year = 2008
+}
+@article{bindingdb,
+	author	=	{Liu, Tiqing and Lin, Yuhmei and Wen, Xin and Jorissen, Robert N. and Gilson, Michael K.},
+	title	=	{{BindingDB: a web-accessible database of experimentally determined protein-ligand binding affinities}},
+	journal	=	{Nucleic Acids Research},
+	year	=	{2007},
+	volume	=	{35},
+	number	=	{suppl\_1},
+	pages	=	{D198-D201},
+}
+@InProceedings{mpc_cmp,
+author="Nishide, Takashi
+and Ohta, Kazuo",
+editor="Okamoto, Tatsuaki
+and Wang, Xiaoyun",
+title="Multiparty Computation for Interval, Equality, and Comparison Without Bit-Decomposition Protocol",
+booktitle="Public Key Cryptography -- PKC 2007",
+year="2007",
 publisher="Springer Berlin Heidelberg",
 address="Berlin, Heidelberg",
-pages="325--343",
-abstract="In this note, we report on the first large-scale and practical application of secure multiparty computation, which took place in January 2008. We also report on the novel cryptographic protocols that were used.",
-isbn="978-3-642-03549-4"
+pages="343--360",
+abstract="Damg{\aa}rd et al. [11] showed a novel technique to convert a polynomial sharing of secret a into the sharings of the bits of a in constant rounds, which is called the bit-decomposition protocol. The bit-decomposition protocol is a very powerful tool because it enables bit-oriented operations even if shared secrets are given as elements in the field. However, the bit-decomposition protocol is relatively expensive.",
+isbn="978-3-540-71677-8"
+}
+@article{distributed_svd,
+	author = {Iwen, M. and Ong, B.},
+	title = {A Distributed and Incremental SVD Algorithm for Agglomerative Data Analysis on Large Networks},
+	journal = {SIAM Journal on Matrix Analysis and Applications},
+	volume = {37},
+	number = {4},
+	pages = {1699-1718},
+	year = {2016},
+	doi = {10.1137/16M1058467},
+	
+	URL = { 
+	https://doi.org/10.1137/16M1058467
+	
+	},
+	eprint = { 
+	https://doi.org/10.1137/16M1058467
+	
+	}
+}@inproceedings{Yao:1982:PSC:1382436.1382751,
+author = {Yao, Andrew C.},
+title = {Protocols for Secure Computations},
+booktitle = {Proceedings of the 23rd Annual Symposium on Foundations of Computer Science},
+series = {SFCS '82},
+year = {1982},
+pages = {160--164},
+numpages = {5},
+url = {https://doi.org/10.1109/SFCS.1982.88},
+doi = {10.1109/SFCS.1982.88},
+acmid = {1382751},
+publisher = {IEEE Computer Society},
+address = {Washington, DC, USA},
+}
+@conference {1987,
+title = {How to Play ANY Mental Game or A Completeness Theorem for Protocols with Honest Majority},
+booktitle = {Proceedings of the Nineteenth Annual ACM Symposium on Theory of Computing},
+year = {1987},
+publisher = {ACM},
+organization = {ACM},
+address = {New York, NY, USA},
+abstract = {We present a polynomial-time algorithm that, given as a input the description of a game with incomplete information and any number of players, produces a protocol for playing the game that leaks no partial information, provided the majority of the players is honest. Our algorithm automatically solves all the multi-party protocol problems addressed in complexity-based cryptography during the last 10 years. It actually is a completeness theorem for the class of distributed protocols with honest majority. Such completeness theorem is optimal in the sense that, if the majority of the players is not honest, some protocol problems have no efficient solution [C].},
+isbn = {0-89791-221-7},
+doi = {10.1145/28395.28420},
+url = {http://doi.acm.org/10.1145/28395.28420},
+author = {Goldreich, O. and Micali, S. and Wigderson, A.}
+}
+@InProceedings{10.1007/978-3-540-28628-8_32,
+	author="Dwork, Cynthia
+	and Nissim, Kobbi",
+	editor="Franklin, Matt",
+	title="Privacy-Preserving Datamining on Vertically Partitioned Databases",
+	booktitle="Advances in Cryptology -- CRYPTO 2004",
+	year="2004",
+	publisher="Springer Berlin Heidelberg",
+	address="Berlin, Heidelberg",
+	pages="528--544",
+	abstract="In a recent paper Dinur and Nissim considered a statistical database in which a trusted database administrator monitors queries and introduces noise to the responses with the goal of maintaining data privacy [5]. Under a rigorous definition of breach of privacy, Dinur and Nissim proved that unless the total number of queries is sub-linear in the size of the database, a substantial amount of noise is required to avoid a breach, rendering the database almost useless.",
+	isbn="978-3-540-28628-8"
+}
+@MISC{Aliasgari_securecomputation,
+	author = {Mehrdad Aliasgari and Marina Blanton and Yihua Zhang and Aaron Steele},
+	title = {Secure Computation on Floating Point Numbers},
+	year = {2012}
+}
+@article{doi:10.1021/c160017a018,
+author = {Morgan, H. L.},
+title = {The Generation of a Unique Machine Description for Chemical Structures-A Technique Developed at Chemical Abstracts Service.},
+journal = {Journal of Chemical Documentation},
+volume = {5},
+number = {2},
+pages = {107-113},
+year = {1965},
+doi = {10.1021/c160017a018},
+
+URL = { 
+https://doi.org/10.1021/c160017a018
+
+},
+eprint = { 
+https://doi.org/10.1021/c160017a018
+
+}
+
 }
 
